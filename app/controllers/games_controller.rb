@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   end
 
   def new
-    
+    @game = Game.new()
   end
 
   def create
@@ -27,7 +27,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-
+    params.require(:game).permit(:state)
   end
   
 end
