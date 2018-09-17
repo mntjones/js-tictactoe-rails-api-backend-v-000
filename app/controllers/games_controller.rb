@@ -12,6 +12,7 @@ class GamesController < ApplicationController
   def create
     @game = Game.new()
     @game.create(game_params)
+    render json: @game
   end
 
   def show
