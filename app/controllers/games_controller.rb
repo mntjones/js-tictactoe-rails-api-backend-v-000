@@ -10,7 +10,7 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new()
-    
+    @game.create(game_params)
   end
 
   def show
@@ -29,5 +29,5 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:state)
   end
-  
+
 end
