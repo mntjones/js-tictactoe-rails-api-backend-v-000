@@ -5,12 +5,7 @@ class GamesController < ApplicationController
     render json: @games
   end
 
-  def new
-    @game = Game.new()
-  end
-
   def create
-    @game = Game.new()
     @game.create(game_params)
     render json: @game
   end
