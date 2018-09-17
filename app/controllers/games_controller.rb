@@ -6,12 +6,13 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game.create(game_params)
-    render json: @game
+    game = Game.create(game_params)
+    render json: game
   end
 
   def show
-    @game = Game.find(id: params[:id])
+    @game = Game.find(params[:id])
+    render json: @game
   end
 
   def edit
